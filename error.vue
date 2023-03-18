@@ -10,6 +10,7 @@
         <p>It looks like something broke.</p>
         <p>Sorry about that.</p>
       </div>
+      <p><strong>{{ error?.message }}</strong></p>
       <div class="prose mt-5">
         <p>
           Go to the
