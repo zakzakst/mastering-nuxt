@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <div class="flex flex-col">
-      <div v-if="error.statusCode === '404'" class="prose">
+      <div v-if="error?.statusCode === '404'" class="prose">
         <h1>404</h1>
         <p>I guess that page doesn't exist.</p>
       </div>
