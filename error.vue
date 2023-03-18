@@ -10,6 +10,9 @@
         <p>It looks like something broke.</p>
         <p>Sorry about that.</p>
       </div>
+      <p>
+        <strong>{{ error?.message }}</strong>
+      </p>
       <div class="prose mt-5">
         <p>
           Go to the
@@ -27,7 +30,8 @@ const error = useError();
 
 const handleError = () => {
   clearError({
-    redirect: '/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3'
-  })
-}
+    redirect:
+      "/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3",
+  });
+};
 </script>
