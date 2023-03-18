@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p class="mt-0 uppercase font-bold text-slate-400 mb-1">Lesson {{ chapter.number }} - {{ lesson.number }}</p>
+    <p class="mt-0 uppercase font-bold text-slate-400 mb-1">
+      Lesson {{ chapter.number }} - {{ lesson.number }}
+    </p>
     <h2 class="my-0">{{ lesson.title }}</h2>
     <div class="flex space-x-4 mt-2 mb-8">
       <NuxtLink
@@ -22,9 +24,7 @@
     <p>{{ lesson.text }}</p>
     <LessonCompleteButton
       :model-value="isLessonComplete"
-      @update:model-value="
-        throw createError('Could not update');
-      "
+      @update:model-value="throw createError('Could not update');"
     />
   </div>
 </template>
@@ -42,10 +42,12 @@ definePageMeta({
     );
 
     if (!chapter) {
-      return abortNavigation(createError({
-        statusCode: 404,
-        message: 'Chapter not found',
-      }));
+      return abortNavigation(
+        createError({
+          statusCode: 404,
+          message: "Chapter not found",
+        })
+      );
     }
 
     const lesson = chapter.lessons.find(
@@ -53,12 +55,14 @@ definePageMeta({
     );
 
     if (!lesson) {
-      return abortNavigation(createError({
-        statusCode: 404,
-        message: 'Lesson not found',
-      }));
+      return abortNavigation(
+        createError({
+          statusCode: 404,
+          message: "Lesson not found",
+        })
+      );
     }
-  }
+  },
 });
 
 const chapter = computed(() => {
@@ -81,7 +85,7 @@ useHead({
   title,
 });
 
-const progress = useLocalStorage('progress', []);
+const progress = useLocalStorage("progress", []);
 
 const isLessonComplete = computed(() => {
   if (!progress.value[chapter.value.number - 1]) {
@@ -97,6 +101,7 @@ const toggleComplete = () => {
   if (!progress.value[chapter.value.number - 1]) {
     progress.value[chapter.value.number - 1] = [];
   }
-  progress.value[chapter.value.number - 1][lesson.value.number - 1] = !isLessonComplete.value;
+  progress.value[chapter.value.number - 1][lesson.value.number - 1] =
+    !isLessonComplete.value;
 };
 </script>
