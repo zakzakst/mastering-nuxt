@@ -75,6 +75,10 @@ import screen4 from "~/assets/images/screen4.png";
 import screen5 from "~/assets/images/screen5.png";
 const course = await useCourse();
 
+const config = useRuntimeConfig();
+console.log("publicついてないと見れない", config.stripeSecret);
+console.log("publicついてると見れる", config.public.stripeKey);
+
 const learningOutcomes = [
   "Hands-On Experience with the Benefits of TypeScript",
   "How to make the most out of your IDE",
