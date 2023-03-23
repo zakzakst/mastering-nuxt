@@ -20,7 +20,9 @@
     "netlify-cli": "^13.1.6",
     "nuxt": "3.0.0",
     "pinia": "^2.0.33",
-    "prisma": "^4.11.0"
+    "prisma": "^4.11.0",
+    "stripe": "^11.15.0",
+    "vite-plugin-vsharp": "^1.4.2"
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3",
